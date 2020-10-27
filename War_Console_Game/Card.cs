@@ -15,7 +15,28 @@ namespace War_Console_Game
 
         public override string ToString()
         {
-            return $"{Value} of {Suit}";
+            string valueDisplay = "";
+            if (Value <= 10)
+            {
+                valueDisplay = Value.ToString();
+            }
+            else if (Value == 11)
+            {
+                valueDisplay = "Jack";
+            }
+            else if (Value == 12)
+            {
+                valueDisplay = "Queen";
+            }
+            else if (Value == 13)
+            {
+                valueDisplay = "King";
+            }
+            else if (Value == 14)
+            {
+                valueDisplay = "Ace"; ;
+            }
+            return ($"{valueDisplay} of {Suit}");
         }
 
     }
@@ -23,10 +44,10 @@ namespace War_Console_Game
 
     public enum CardSuit
     {
-        Heart,
-        Spade,
-        Diamond,
-        Club
+        Hearts,
+        Spades,
+        Diamonds,
+        Clubs
     }
 
 }

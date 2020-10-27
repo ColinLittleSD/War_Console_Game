@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace War_Console_Game
@@ -15,17 +16,24 @@ namespace War_Console_Game
 
         public Game()
         {
-            PlayerOne = new Player("Colin");
-            PlayerTwo = new Player("Max");
+            Console.Write("Player One enter your name: ");
+            PlayerOne = new Player (Console.ReadLine());
+
+            Console.Write("Player Two enter your name: ");
+            PlayerTwo = new Player(Console.ReadLine());
+
             CardDeck = new Deck();
         }
 
         public void PlayGame()
-        { 
+        {
+            Console.WriteLine("Welcome to Battle!");
+
             while (CardDeck.Cards.Count > 0)
             {
+                Console.WriteLine("Press enter to draw cards");
+                Console.ReadKey();
                 PlayersDrawCards();
-                //SeeDeck();
                 SeePoints();
             }
             if (PlayerOne.Points > PlayerTwo.Points)
@@ -72,6 +80,7 @@ namespace War_Console_Game
             }
         }
 
+        //Used SeeDeck() before we ran the game to make sure our deck was populated, in game were not using it
         public void SeeDeck()
         {
             foreach (Card c in CardDeck.Cards)

@@ -8,20 +8,16 @@ namespace War_Console_Game
 {
     class Player
     {
-        
         public string Name { get; set; }
         public List<Card> CardsInHand { get; set; }
         public int Points { get; set; }
-
         public Player() { }
-
         public Player(string name)
         {
             Name = name;
             CardsInHand = new List<Card>();
             Points = 0;
         }
-
         public List<Card> Deal (List<Card> cards)
         {
             List<Card> player1cards = new List<Card>();

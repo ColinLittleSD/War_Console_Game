@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace War_Console_Game
@@ -17,19 +18,19 @@ namespace War_Console_Game
                 CardSuit cardSuitType;
                 if (suit == 0)
                 {
-                    cardSuitType = CardSuit.Heart;
+                    cardSuitType = CardSuit.Hearts;
                 } 
                 else if (suit == 1)
                 {
-                    cardSuitType = CardSuit.Diamond;
+                    cardSuitType = CardSuit.Diamonds;
                 } 
                 else if (suit == 2)
                 {
-                    cardSuitType = CardSuit.Spade;
+                    cardSuitType = CardSuit.Spades;
                 } 
                 else
                 {
-                    cardSuitType = CardSuit.Club;
+                    cardSuitType = CardSuit.Clubs;
                 }
                 for (int cardValue = 2; cardValue <= 14; cardValue++)
                 {
@@ -37,7 +38,6 @@ namespace War_Console_Game
                     Cards.Add(card);
                 }
             }
-
             Shuffle();
         }
 
@@ -54,6 +54,7 @@ namespace War_Console_Game
                 Cards[currentCardIndex] = tempCard;
             }
         }
+
 
 
         // switch this to <int, string> and reverse values. 
